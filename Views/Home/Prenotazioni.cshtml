@@ -1,0 +1,28 @@
+@model dbContext
+@{
+     ViewData["Title"] = "Prenotazioni";
+}
+<p>Benvenuto</p>
+<p>Sono stati registrati @Model.Utenti.Count() utenti ...</p>
+<table class="table table-dark">
+     <thead class="thead-dark">
+          <th>Nome</th>
+          <th>Cognome</th>
+          <th>Tipo</th>
+          <th>Email </th>
+          <th>Città</th>
+     </thead>
+     @{
+          foreach (var item in @Model.Utenti)
+          {
+
+               <tr>
+                    <td>@item.Nome</td>
+                    <td>@item.Cognome</td>
+                    <td>@item.Tipo</td>
+                    <td>@item.Email</td>
+                    <td>@item.Città</td>
+               </tr>
+          }
+     }
+</table>
